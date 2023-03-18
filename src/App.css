@@ -36,3 +36,50 @@
     transform: rotate(360deg);
   }
 }
+
+.book {
+  display: grid;
+  max-width: 200px;
+  gap: 20px;
+}
+
+.top-navbar {
+  display:flex;
+
+  align-items:center;
+  
+  /* justify-content:space-between; */
+  
+  padding:20px;
+}
+
+li {
+  list-style: none;
+}
+
+.navbar-logo{
+margin-right: 3em;
+}
+.navbar-link{
+  display: flex;
+  width: 100vw;
+  justify-content: space-evenly;
+}
+
+.navbar-link ul{
+  display: flex;
+ 
+ 
+  margin: 0;
+  padding: 0;
+
+  
+
+}
+
+
+.navbar-link li{
+ 
+ 
+  padding: 1em;
+}
