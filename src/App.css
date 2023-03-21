@@ -1,3 +1,9 @@
+#root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width:100%
+}
 .App {
   text-align: center;
 }
@@ -37,6 +43,41 @@
   }
 }
 
+footer {
+  background:  #495E57;
+}
+
+.footer-menu {
+  color:white;
+  display: grid;
+  grid-template-columns: 2fr 3.5fr 3.5fr 3.5fr;
+}
+.footer-menu ul{
+  margin: 1.2em 0.8em;
+}
+.footer-header {
+  font-size: 1.3em;
+  font-weight: bold;
+  padding-bottom:0.8em;
+}
+
+.section-heading{
+  background: #495E57;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items:flex-end;
+  padding-left: 3em;
+  
+  
+}
+.section-heading img {
+  width:50%;
+  height: 100%;
+ 
+ 
+}
+
 .book {
   display: grid;
   max-width: 200px;
@@ -44,12 +85,9 @@
 }
 
 .top-navbar {
-  display:flex;
-
-  align-items:center;
-  
-  /* justify-content:space-between; */
-  
+  display:grid;
+  grid-template-columns: 2fr 10fr;
+  align-items:center; 
   padding:20px;
 }
 
@@ -57,19 +95,15 @@ li {
   list-style: none;
 }
 
-.navbar-logo{
-margin-right: 3em;
-}
+
 .navbar-link{
   display: flex;
-  width: 100vw;
+ 
   justify-content: space-evenly;
 }
 
 .navbar-link ul{
   display: flex;
- 
- 
   margin: 0;
   padding: 0;
 
