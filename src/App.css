@@ -199,3 +199,12 @@ li {
  
   padding: 1em;
 }
+
+@media only screen and (max-width: 768px) {
+  .spacials {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1em;
+    grid-row-gap: 100px;
+  }
+}

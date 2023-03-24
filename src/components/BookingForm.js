@@ -2,7 +2,7 @@
 import {useState} from 'react';
 import  "../App.css";
 
-export default function BookingForm() {
+export default function BookingForm({availableTimes,updateTimes}) {
     //the user should not be able to reserve a table for less than one person.
     const [name, setName] = useState('');
     const [email,setEmail] = useState('');
@@ -12,7 +12,24 @@ export default function BookingForm() {
     const [partySize, setPartySize] = useState(1);
     const [occasion,setOccasion] =useState('');
     const [comments,setComments] = useState('');
+
+    const [finalTime, setFinalTime] = useState(
+      availableTimes.map((times) => <option value={times}>{times}</option>)
+  );
+
+  console.log('aa',availableTimes)
    
+  function handleDateChange(e) {
+   setReservedDate(e.target.value);
+
+   var stringify = e.target.value;
+   const date = new Date(stringify);
+
+   updateTimes(date);
+
+   setFinalTime(availableTimes.map((times) => <option>{times}</option>));
+}
+
   
     const handleSubmit = (event) => {
       event.preventDefault();
@@ -68,7 +85,7 @@ export default function BookingForm() {
       type='tel'
       id='phonenum'
       value={tel}
-      placeholder='10 number digits'
+      placeholder='10digits'
       pattern="[1-9]{1}[0-9]{9}"
      
       required
@@ -79,16 +96,17 @@ export default function BookingForm() {
     
      
       <label htmlFor="res-date">Choose date</label>
-      <input type="date" id="res-date" onChange={(e)=>setReservedDate(e.target.value)} required/>
+      <input type="date" id="res-date" onChange={handleDateChange} required/>
       <label htmlFor="res-time">Choose time</label>
          <select id="res-time " onChange={(e)=>setReservedTime(e.target.value)} required placeholder='select time'>
-            <option value=''>Unselected</option>
+            {/* <option value=''>Unselected</option>
             <option value='17:00'>17:00</option>
             <option value='18:00'>18:00</option>
             <option value='19:00'>19:00</option>
             <option value='20:00'>20:00</option>
             <option value='21:00'>21:00</option>
-            <option value='22:00'>22:00</option>
+            <option value='22:00'>22:00</option> */}
+            {finalTime}
           </select>
       <label htmlFor="guests">Number of guests</label>
          <input type="number" placeholder="1" min="1" max="10" id="guests" onChange={(event) => setPartySize(event.target.value)} required></input>

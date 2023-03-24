@@ -1,10 +1,25 @@
-import React from 'react'
+import {useReducer} from 'react'
 import Navbar  from './Navbar'
 import Footer from './Footer'
 import BookingForm from './BookingForm'
 import BookingImg from '../assets/food2.jpeg'
+import {fetchAPI} from './BookingAPI'
 
 const BookingPage  = () => {
+
+  function updateTimes(date) {
+    return (
+        fetchAPI(date)
+    );
+}
+
+
+const output = fetchAPI(new Date());
+console.log('output',output)
+
+const [availableTimes, dispatch] = useReducer(updateTimes, output);
+
+
   return (
     <>
     <Navbar/>
@@ -16,7 +31,7 @@ const BookingPage  = () => {
             </div>
     </header>
     <main>
-    <BookingForm/>
+    <BookingForm availableTimes={availableTimes} updateTimes={dispatch}/>
     </main>
     <Footer/>
     </>
