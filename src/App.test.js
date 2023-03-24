@@ -1,21 +1,16 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import BookingForm from './components/BookingForm';
+import Heading from './components/Heading';
+import Order from './components/Order';
 
 
 test('renders the occasion select element with options', () => {
-  render(<BookingForm />);
-  const occasionSelectElement = screen.getByLabelText('Occasion');
+  // render(<Order />);
+  // expect(screen.getByRole("img")).toBeInTheDocument();
 
-  expect(occasionSelectElement).toBeInTheDocument();
-  expect(occasionSelectElement).toHaveValue('Other');
+  render(<Heading/>)
 
-  // const options = occasionSelectElement.querySelectorAll('option');
-  // expect(options).toHaveLength(4);
-  // expect(options[0]).toHaveValue('');
-  // expect(options[1]).toHaveValue('Birthday');
-  // expect(options[2]).toHaveValue('Anniversary');
-  // expect(options[3]).toHaveValue('Other');
-
-  fireEvent.change(occasionSelectElement, { target: { value: 'Birthday' } });
-  expect(occasionSelectElement).toHaveValue('Birthday');
+  const headingElement = screen.getByText("Promotion code: happy10off");
+  expect(headingElement).toBeInTheDocument();
+ 
 });

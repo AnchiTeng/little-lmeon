@@ -10,6 +10,7 @@ import Menu from './Menu';
 
 export default function Routing() {
   return (
+   
       <Routes>
           <Route path="/" element= {
           <Homepage />
@@ -38,5 +39,6 @@ export default function Routing() {
               <Confirmation />
           } />
       </Routes>
+    
   );
 }
