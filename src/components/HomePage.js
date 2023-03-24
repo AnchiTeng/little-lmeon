@@ -1,4 +1,5 @@
 import React from 'react'
+import BookingPage from './BookingPage'
 import BookingForm from './BookingForm'
 import Footer from './Footer'
 import Navbar from './Navbar'
@@ -11,7 +12,7 @@ const HomePage = () => {
     <Navbar/>
     <Heading/>
     <Specials/>
-    <BookingForm/>
+   
     <Footer/>
    </>
   )

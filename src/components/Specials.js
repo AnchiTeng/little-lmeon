@@ -31,7 +31,9 @@ const Specials = () => {
     <div className='spacials-container'>
         <article>
             <h1>Week Specials</h1>
-            <button className='sections-btn'>Online Menu</button>
+            <button className='sections-btn'>
+                <a href='./menu'> Online Menu</a>
+            </button>
         </article>
         <div className='spacials'>  
             <section className="menu-card-content">
